@@ -11,14 +11,20 @@ const Home = ({ blogs }) => {
     <PageLayout>
       <AuthorIntro />
       <hr/>
-      {JSON.stringify(blogs)}
       <Row className="mb-5">
-        <Col md="10">
+        {/*<Col md="10">
           <CardListItem />
-        </Col>
-        <Col md="4">
-          <CardItem />
-        </Col>
+        </Col>*/}
+        {
+          blogs.map(({ title, subtitle, slug }) => (
+            <Col key={slug} md="4">
+              <CardItem
+                title={title}
+                subtitle={subtitle}
+              />
+            </Col>
+          ))
+        }
       </Row>
     </PageLayout>
   );
@@ -28,6 +34,7 @@ const Home = ({ blogs }) => {
 // Provides props to your page
 // it will create static page
 export const getStaticProps = async () => {
+  console.log('calling getStaticProps');
   const blogs = await getAllBlogs();
   return {
     props: {
