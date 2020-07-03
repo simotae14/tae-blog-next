@@ -1,4 +1,4 @@
-import { Navbar, Nav, Media, Image, Card } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 
 const BlogNavbar = () => {
   return (
@@ -7,7 +7,7 @@ const BlogNavbar = () => {
       bg="transparent"
       expand="lg" >
       <Navbar.Brand className="fj-navbar-brand">
-        <a href="#">Filip-Jerga</a>
+        <a href="#">Simone-Taeggi</a>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -22,4 +22,4 @@ const BlogNavbar = () => {
   );
 };
 
-export default Navbar;
+export default BlogNavbar;

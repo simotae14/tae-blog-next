@@ -1,5 +1,5 @@
 import { Container, Row, Col, Media, Image, Card } from 'react-bootstrap';
-import BlogNavbar from '../components/BlogNavbar';
+import BlogNavbar from 'components/BlogNavbar';
 
 const Home = () => {
   return (
@@ -15,13 +15,13 @@ const Home = () => {
                 width={64}
                 height={64}
                 className="mr-3"
-                src="https://avatars1.githubusercontent.com/u/9482724?s=460&u=69a6acab13fd5547a4e316e496b573271077147f&v=4"
+                src="https://avatars0.githubusercontent.com/u/2589748?v=4"
                 alt="Generic placeholder"
               />
               <Media.Body>
                 <h5 className="font-weight-bold mb-0">Hello Friends,</h5>
                 <p className="welcome-text">
-                My name is Filip Jerga and I am an experienced software engineer and freelance developer.
+                My name is Simone Taeggi and I am an experienced software engineer and freelance developer.
                 and this is my blog page.
                 </p>
               </Media.Body>
