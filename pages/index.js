@@ -16,13 +16,14 @@ const Home = ({ blogs }) => {
           <CardListItem />
         </Col>*/}
         {
-          blogs.map(({ title, subtitle, date, coverImage, slug }) => (
+          blogs.map(({ title, subtitle, date, coverImage, slug, author }) => (
             <Col key={slug} md="4">
               <CardItem
                 title={title}
                 subtitle={subtitle}
                 date={date}
                 image={coverImage}
+                author={author}
               />
             </Col>
           ))
