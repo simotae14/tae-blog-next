@@ -1,4 +1,5 @@
 import { Navbar, Nav } from 'react-bootstrap';
+import Link from 'next/link';
 
 const BlogNavbar = () => {
   return (
@@ -7,15 +8,20 @@ const BlogNavbar = () => {
       bg="transparent"
       expand="lg" >
       <Navbar.Brand className="fj-navbar-brand">
-        <a href="#">Simone-Taeggi</a>
+        <Link href="/index">
+          <a>Simone-Taeggi</a>  
+        </Link>  
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link
-            className="fj-navbar-item fj-navbar-link"
-            href='/'>Home
-          </Nav.Link>
+            <Nav.Link
+              as={() => 
+                <Link href="/index">
+                  <a className="fj-navbar-item fj-navbar-link">Home</a>
+                </Link>
+              }
+            />
         </Nav>
       </Navbar.Collapse>
     </Navbar>

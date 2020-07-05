@@ -24,6 +24,10 @@ const Home = ({ blogs }) => {
                 date={date}
                 image={coverImage}
                 author={author}
+                link={{
+                  href: "/blogs/[slug]",
+                  as: `/blogs/${slug}`
+                }}
               />
             </Col>
           ))
