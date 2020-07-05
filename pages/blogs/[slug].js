@@ -1,11 +1,10 @@
 import PageLayout from 'components/PageLayout';
 
-import { getBlogBySlug } from 'lib/api';
+import { getBlogBySlug, getAllBlogs } from 'lib/api';
 
 const BlogDetail = ({
   blog
 }) => {
-  console.log('Displaying page');
   return (
     <PageLayout>
       <h1>Detail page {blog?.slug}</h1>
@@ -14,7 +13,6 @@ const BlogDetail = ({
 };
 
 export const getStaticProps = async ({ params }) => {
-  console.log('Fetching blog by', params.slug);
   const blog = await getBlogBySlug(params.slug);
   return {
     props: {
@@ -23,24 +21,15 @@ export const getStaticProps = async ({ params }) => {
   }
 };
 
-export const getStaticPaths = () => {
-  console.log('getting paths for every page');
+export const getStaticPaths = async () => {
+  const blogs = await getAllBlogs();
+  const paths = blogs?.map(({ slug }) => ({
+    params: {
+      slug
+    }
+  }));
   return {
-    paths: [{
-      params: {
-        slug: 'my-third-blog'
-      }
-    },
-    {
-      params: {
-        slug: 'my-second-blog'
-      }
-    },
-    {
-      params: {
-        slug: 'my-first-blog'
-      }
-    }],
+    paths,
     fallback: false
   }
 };
